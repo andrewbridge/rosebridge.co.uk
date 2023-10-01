@@ -1,92 +1,357 @@
-body {
-    background: url('./assets/bg.png');
-}
-
 h1 {
-    font-size: 100px;
-    font-weight: normal;
-    color: transparent;
-    transition: 1s color ease-in-out;
-}
-
-h1.entered {
-    color: black;
-}
-
-h1, p {
-    font-family: Cinzel, serif;
-    text-align: center;
-}
-
-.vingette {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000;
-    background-image: radial-gradient(circle, rgba(0,0,0,0) 62%, rgba(0,0,0,0.6334908963585435) 100%);
-}
-
-.vingette.entered {
-    transition: 1s background-color ease-in-out;
-    background-color: transparent;
-}
-
-.entrance-text {
-    letter-spacing: 22px;
-    margin-left: 3%;
-}
-
-.entrance-text.entered {
-    color: black;
-}
-
-.entrance-text span {
-    display: inline-block;
-    max-width: 100vw;
-    transition: 1s transform ease-in-out, 1s max-width ease-in-out;
-}
-
-.entrance-text:not(.swap) .end:not(.start),
-.entrance-text.swap .start:not(.end) {
-    transform: scaleX(0);
-    max-width: 0;
-}
-
-.entrance-text .logo {
-    color: transparent;
-}
-
-.entrance-text .logo::after {
-    content: '';
-    background: url('./assets/hamilton-logo.svg') no-repeat;
-    overflow: visible;
-    position: absolute;
-    width: 600px;
-    height: 628px;
-    transform: translate(-35%, -15%);
-    transition: 1s transform ease-in-out;
-}
-
-.entrance-text.entered .logo::after {
-    transform: scale(0.27) translate(-228%, -175%);
+    font-family: 'Bungee Shade', cursive;
 }
 
 .message {
-    max-height: 0;
-    opacity: 0;
-    border-radius: 1em;
-    background: rgba(255, 255, 255, 0.6);
-    width: 80%;
-    margin: 0 auto;
-    margin-top: -5%;
-    padding: 1em;
-    transition: 1s max-height ease-in-out, 1s opacity ease-in-out, 1s margin-left ease-in-out;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
-.message.entered {
-    max-height: 1000px;
-    opacity: 1;
-    margin-top: 0;
+svg {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+[class^="scene-"] #speaker-right, [class^="scene-"] #speaker-left {
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+#side-panel {
+    fill:#fee918;
+    stroke-width:.932343;
+    fill-opacity: 0;
+}
+
+.scene-1 #side-panel,
+.scene-10 #side-panel,
+.scene-11 #side-panel,
+.scene-12 #side-panel,
+.scene-21 #side-panel {
+    fill-opacity: 1;
+}
+
+.scene-10 #side-panel,
+.scene-11 #side-panel {
+    fill: #18fe70;
+}
+
+#viewing-window {
+    fill:#fe2559;
+    fill-opacity:0;
+}
+
+.scene-2 #viewing-window,
+.scene-10 #viewing-window,
+.scene-11 #viewing-window,
+.scene-13 #viewing-window,
+.scene-22 #viewing-window {
+    fill-opacity: 1;
+}
+
+.scene-10 #viewing-window,
+.scene-11 #viewing-window {
+    fill: #ae25fe;
+}
+
+#pressed-button-front {
+    fill:#fee918;
+    fill-opacity:0;
+}
+
+.scene-3 #pressed-button-front,
+.scene-10 #pressed-button-front,
+.scene-11 #pressed-button-front,
+.scene-14 #pressed-button-front,
+.scene-23 #pressed-button-front {
+    fill-opacity: 1;
+}
+
+.scene-10 #pressed-button-front,
+.scene-11 #pressed-button-front {
+    fill: #18b9fe;
+}
+
+#cassette-area {
+    fill:#fee918;
+    fill-opacity:0;
+}
+
+.scene-4 #cassette-area,
+.scene-11 #cassette-area,
+.scene-15 #cassette-area,
+.scene-24 #cassette-area {
+    fill-opacity: 1;
+}
+
+#above-cassette {
+    fill:#fe2559;
+    fill-opacity:0;
+    stroke-width:.999961;
+    stroke-dasharray:none;
+}
+
+.scene-5 #above-cassette,
+.scene-16 #above-cassette,
+.scene-25 #above-cassette {
+    fill-opacity: 1;
+}
+
+#middle-button-top {
+    fill:#fee918;
+    fill-opacity:0;
+}
+
+.scene-6 #middle-button-top,
+.scene-17 #middle-button-top,
+.scene-26 #middle-button-top {
+    fill-opacity: 1;
+}
+
+#player-front {
+    fill:white;
+    fill-opacity:1;
+}
+
+.scene-7 #player-front,
+.scene-18 #player-front,
+.scene-27 #player-front,
+[class^="scene-3"] #player-front {
+    fill: #fee918;
+}
+
+#end-button-top {
+    fill:#fee918;
+    fill-opacity:0;
+}
+
+.scene-8 #end-button-top,
+.scene-19 #end-button-top,
+.scene-28 #end-button-top {
+    fill-opacity: 1;
+}
+
+#player-top {
+    fill:white;
+    fill-opacity:1;
+}
+
+.scene-9 #player-top,
+.scene-20 #player-top,
+.scene-29 #player-top,
+[class^="scene-3"] #player-top {
+    fill: #fee918;
+}
+
+.scene-30 path,
+.scene-31 path,
+.scene-32 path,
+.scene-33 path,
+.scene-34 path,
+.scene-35 path,
+.scene-36 path,
+.scene-37 path,
+.scene-38 path,
+.scene-39 path,
+.scene-40 path,
+.scene-41 path,
+.scene-42 path,
+.scene-43 path,
+.scene-44 path,
+.scene-45 path,
+.scene-46 path,
+.scene-47 path,
+.scene-48 path,
+.scene-49 path,
+.scene-50 path,
+.scene-51 path,
+.scene-52 path,
+.scene-53 path,
+.scene-54 path,
+.scene-55 path,
+.scene-56 path,
+.scene-57 path,
+.scene-58 path,
+.scene-59 path,
+.scene-60 path {
+    fill-opacity: 1 !important;
+}
+
+.scene-31 .colour-1,
+.scene-32 .colour-2,
+.scene-33 .colour-3,
+.scene-34 .colour-4,
+.scene-35 .colour-5,
+.scene-36 .colour-1,
+.scene-37 .colour-2,
+.scene-38 .colour-3,
+.scene-39 .colour-4,
+.scene-40 .colour-5,
+.scene-41 .colour-1,
+.scene-42 .colour-2,
+.scene-43 .colour-3,
+.scene-44 .colour-4,
+.scene-45 .colour-5,
+.scene-46 .colour-1,
+.scene-47 .colour-2,
+.scene-48 .colour-3,
+.scene-49 .colour-4,
+.scene-50 .colour-5,
+.scene-51 .colour-1,
+.scene-52 .colour-2,
+.scene-53 .colour-3,
+.scene-54 .colour-4,
+.scene-55 .colour-5,
+.scene-56 .colour-1,
+.scene-57 .colour-2,
+.scene-58 .colour-3,
+.scene-59 .colour-4,
+.scene-60 .colour-5 {
+    fill:#fee918 !important;
+}
+
+.scene-31 .colour-2,
+.scene-32 .colour-3,
+.scene-33 .colour-4,
+.scene-34 .colour-5,
+.scene-35 .colour-1,
+.scene-36 .colour-2,
+.scene-37 .colour-3,
+.scene-38 .colour-4,
+.scene-39 .colour-5,
+.scene-40 .colour-1,
+.scene-41 .colour-2,
+.scene-42 .colour-3,
+.scene-43 .colour-4,
+.scene-44 .colour-5,
+.scene-45 .colour-1,
+.scene-46 .colour-2,
+.scene-47 .colour-3,
+.scene-48 .colour-4,
+.scene-49 .colour-5,
+.scene-50 .colour-1,
+.scene-51 .colour-2,
+.scene-52 .colour-3,
+.scene-53 .colour-4,
+.scene-54 .colour-5,
+.scene-55 .colour-1,
+.scene-56 .colour-2,
+.scene-57 .colour-3,
+.scene-58 .colour-4,
+.scene-59 .colour-5,
+.scene-60 .colour-1 {
+    fill:#fe2559 !important;
+}
+
+.scene-31 .colour-3,
+.scene-32 .colour-4,
+.scene-33 .colour-5,
+.scene-34 .colour-1,
+.scene-35 .colour-2,
+.scene-36 .colour-3,
+.scene-37 .colour-4,
+.scene-38 .colour-5,
+.scene-39 .colour-1,
+.scene-40 .colour-2,
+.scene-41 .colour-3,
+.scene-42 .colour-4,
+.scene-43 .colour-5,
+.scene-44 .colour-1,
+.scene-45 .colour-2,
+.scene-46 .colour-3,
+.scene-47 .colour-4,
+.scene-48 .colour-5,
+.scene-49 .colour-1,
+.scene-50 .colour-2,
+.scene-51 .colour-3,
+.scene-52 .colour-4,
+.scene-53 .colour-5,
+.scene-54 .colour-1,
+.scene-55 .colour-2,
+.scene-56 .colour-3,
+.scene-57 .colour-4,
+.scene-58 .colour-5,
+.scene-59 .colour-1,
+.scene-60 .colour-2 {
+    fill: #18fe70 !important;
+}
+
+.scene-31 .colour-4,
+.scene-32 .colour-5,
+.scene-33 .colour-1,
+.scene-34 .colour-2,
+.scene-35 .colour-3,
+.scene-36 .colour-4,
+.scene-37 .colour-5,
+.scene-38 .colour-1,
+.scene-39 .colour-2,
+.scene-40 .colour-3,
+.scene-41 .colour-4,
+.scene-42 .colour-5,
+.scene-43 .colour-1,
+.scene-44 .colour-2,
+.scene-45 .colour-3,
+.scene-46 .colour-4,
+.scene-47 .colour-5,
+.scene-48 .colour-1,
+.scene-49 .colour-2,
+.scene-50 .colour-3,
+.scene-51 .colour-4,
+.scene-52 .colour-5,
+.scene-53 .colour-1,
+.scene-54 .colour-2,
+.scene-55 .colour-3,
+.scene-56 .colour-4,
+.scene-57 .colour-5,
+.scene-58 .colour-1,
+.scene-59 .colour-2,
+.scene-60 .colour-3 {
+    fill: #18b9fe !important;
+}
+
+.scene-31 .colour-5,
+.scene-32 .colour-1,
+.scene-33 .colour-2,
+.scene-34 .colour-3,
+.scene-35 .colour-4,
+.scene-36 .colour-5,
+.scene-37 .colour-1,
+.scene-38 .colour-2,
+.scene-39 .colour-3,
+.scene-40 .colour-4,
+.scene-41 .colour-5,
+.scene-42 .colour-1,
+.scene-43 .colour-2,
+.scene-44 .colour-3,
+.scene-45 .colour-4,
+.scene-46 .colour-5,
+.scene-47 .colour-1,
+.scene-48 .colour-2,
+.scene-49 .colour-3,
+.scene-50 .colour-4,
+.scene-51 .colour-5,
+.scene-52 .colour-1,
+.scene-53 .colour-2,
+.scene-54 .colour-3,
+.scene-55 .colour-4,
+.scene-56 .colour-5,
+.scene-57 .colour-1,
+.scene-58 .colour-2,
+.scene-59 .colour-3,
+.scene-60 .colour-4 {
+    fill: #ae25fe !important;
 }
