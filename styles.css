@@ -13,6 +13,35 @@ svg {
     width: 100%;
 }
 
+#play-prompt {
+    font-size:1.79427px;
+    fill:#000;
+    fill-opacity:1;
+    stroke-width:.999961;
+    stroke-dasharray:none;
+}
+
+#play-prompt-text {
+    font-style:normal;
+    font-variant:normal;
+    font-weight:400;
+    font-stretch:normal;
+    font-size:1.79427px;
+    font-family:Chalkduster,"Comic Sans MS",monospace;
+    fill:#000;
+    fill-opacity:1;
+    stroke-width:.999961;
+}
+
+#play-prompt-arrow {
+    font-size:3.3125px;
+    baseline-shift:sub;
+}
+
+.playing #play-prompt {
+    display: none;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -27,7 +56,7 @@ svg {
     }
 }
 
-[class^="scene-"] #speaker-right, [class^="scene-"] #speaker-left {
+[class*="scene-"] #speaker-right, [class*="scene-"] #speaker-left {
     animation: pulse 0.5s ease-in-out infinite;
 }
 
@@ -129,8 +158,7 @@ svg {
 
 .scene-7 #player-front,
 .scene-18 #player-front,
-.scene-27 #player-front,
-[class^="scene-3"] #player-front {
+.scene-27 #player-front {
     fill: #fee918;
 }
 
@@ -152,8 +180,7 @@ svg {
 
 .scene-9 #player-top,
 .scene-20 #player-top,
-.scene-29 #player-top,
-[class^="scene-3"] #player-top {
+.scene-29 #player-top {
     fill: #fee918;
 }
 
